@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <iomanip>
+#include <windows.h>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ using namespace std;
 
 int main()
 {
+    SetConsoleOutputCP(65001);
     string nombre, horoscopo;
     int edad=0, opcion_genero, dia, mes, ano, da, ma, aa;
     //getCurrentDate(mes1, dia1, ano1);
@@ -21,10 +23,10 @@ int main()
     //edad = calcYears(ano, ano1, mes, mes1, dia, dia1);
     cout << "Introduce tu nombre\n";
     cin >> nombre;
-    cout << "Selecciona tu g" << char(130) << "nero\n";
+    cout << "Selecciona tu género\n";
     cout << "Masculino=1 Femenino=2" << endl;
     cin >> opcion_genero;
-    cout << "Introduce tu fecha de nacimiento (dia, mes y a"<<char(164)<<"o)\n";
+    cout << "Introduce tu fecha de nacimiento (dia, mes y año)\n";
     cin >> dia >> mes >> ano;
     /* enero */
     switch (mes) {
@@ -101,7 +103,7 @@ int main()
             horoscopo = "Sagitario";
         break;
     default:
-        std::cout << "Inserta una fecha v"<< char(160) <<"lida" << endl;
+        std::cout << "Inserta una fecha válida" << endl;
     }
     //Función time_t para la fecha actual en vez de la fecha y hora del sistema usando el if
     //y el struct
@@ -121,13 +123,13 @@ int main()
     //printf("Segundos desde 1 de enero de 1970: %u s\n", t);
     if (edad>=18)
     {
-        cout << "T"<< char(163) <<" eres mayor de edad" << endl;
+        cout << "Tú eres mayor de edad" << endl;
     }
     else {
-        cout << "T" << char(163) << " eres menor de edad" << endl;
+        cout << "Tú eres menor de edad" << endl;
     }
     //printf("La fecha/hora actual es: %s", asctime(timeinfo));
-    cout << "Tu hor"<< char(162) <<"scopo es " << horoscopo << "\n";
+    cout << "Tu horóscopo es " << horoscopo << "\n";
     cout << "Tu edad es " << edad << endl;
     system("pause");
 }
