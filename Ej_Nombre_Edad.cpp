@@ -107,9 +107,11 @@ int main()
     }
     //Función time_t para la fecha actual en vez de la fecha y hora del sistema usando el if
     //y el struct
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
-    aa = tm.tm_year + 1900;
+    time_t t = time(NULL);//La función time(NULL) devuelve la hora local en formato "segundos desde 1970". 
+                          //Asignamos ese valor a la variable t
+    struct tm tm = *localtime(&t);//localtime(&t) toma el valor de segundos almacenados en t y la transforma en fecha hora local. Esta fecha hora local se asigna a
+                                    //struct tm que es una estructura que contiene la fecha desglosada en sus componentes
+    aa = tm.tm_year + 1900; //Sumamos 1900 al año porque es cuando se estableció el sistema de fechas
     ma = tm.tm_mon + 1;
     da = tm.tm_mday;
     edad = aa - ano;
